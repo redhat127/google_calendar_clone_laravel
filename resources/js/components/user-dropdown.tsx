@@ -1,4 +1,7 @@
+import account from '@/routes/account';
 import type { User as IUser } from '@/types';
+import { Link } from '@inertiajs/react';
+import { User } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { LogoutForm } from './form/logout-form';
 import {
@@ -30,6 +33,18 @@ export const UserDropdown = ({ user: { name, avatar, email } }: { user: IUser })
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
+        <DropdownMenuItem className="p-0">
+          <Link
+            href={account.index()}
+            className="flex w-full items-center gap-1.5 px-2 py-1.5"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            <User />
+            Account
+          </Link>
+        </DropdownMenuItem>
         <DropdownMenuItem className="p-0">
           <LogoutForm />
         </DropdownMenuItem>
