@@ -20,6 +20,7 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'password' => 'password123456',
+            'provider_name' => 'test',
         ];
     }
 }

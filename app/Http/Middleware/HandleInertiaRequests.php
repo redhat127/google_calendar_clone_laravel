@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Resources\AuthResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
@@ -39,7 +38,8 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-            'auth' => Auth::user()?->toResource(AuthResource::class),
+            'auth' => Auth::user()?->toResource(),
+            'flashMessage' => $request->session()->get('flashMessage'),
         ];
     }
 }

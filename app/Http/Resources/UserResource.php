@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class AuthResource extends JsonResource
+class UserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,6 +20,8 @@ class AuthResource extends JsonResource
             'email',
             'created_at',
             'updated_at',
+            'provider_name',
+            'avatar',
         ]);
     }
 }
