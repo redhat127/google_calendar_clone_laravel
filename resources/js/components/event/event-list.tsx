@@ -14,10 +14,10 @@ export const EventList = ({ events }: { events: Event[] }) => {
         <Card key={event.id} className="gap-4 py-4">
           <CardHeader className="gap-1">
             <CardTitle>
-              <h2 className="capitalize">{event.name}</h2>
+              <h2 className="leading-5 capitalize">{event.name}</h2>
             </CardTitle>
-            <CardDescription className="flex items-center gap-1">
-              <Clock className="size-4" />
+            <CardDescription className="flex items-start gap-1">
+              <Clock className="mt-0.5 size-4" />
               <p>{minutesToHuman(event.duration_in_minutes)}</p>
             </CardDescription>
           </CardHeader>

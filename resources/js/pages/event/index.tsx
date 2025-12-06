@@ -1,7 +1,7 @@
 import { EventList } from '@/components/event/event-list';
 import { BaseLayout } from '@/components/layout/base';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { generateTitle } from '@/lib/utils';
 import { home } from '@/routes';
 import event from '@/routes/event';
@@ -31,14 +31,10 @@ export default function AllEvent() {
                 Back to home
               </Link>
             </p>
-          </CardHeader>
-        </Card>
-        <Card className="gap-4 py-4">
-          <CardContent>
-            <Button asChild>
+            <Button asChild className="mt-2 w-fit">
               <Link href={event.create()}>Create a new Event</Link>
             </Button>
-          </CardContent>
+          </CardHeader>
         </Card>
         {events.length > 0 ? <EventList events={events} /> : <p className="text-sm text-muted-foreground italic">No event found.</p>}
       </div>
