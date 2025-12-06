@@ -76,7 +76,8 @@
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
-        ]
+        ],
+        "format-lint-types": "./vendor/bin/pint && bun run format && bun run lint && bun run types"
     },
     "extra": {
         "laravel": {
