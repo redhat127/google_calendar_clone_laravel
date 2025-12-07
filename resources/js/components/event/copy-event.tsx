@@ -18,7 +18,7 @@ export const CopyEvent = ({ userId, eventId }: { userId: string; eventId: string
   return (
     <Button variant="outline" onClick={handleCopy} className="w-full gap-1.5 sm:w-auto" disabled={copied} aria-label="Copy event url">
       {copied ? <Check /> : <Copy />}
-      {copied ? 'Copied!' : 'Copy'}
+      {copied ? 'Copied!' : 'Copy Link'}
     </Button>
   );
 };
